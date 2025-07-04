@@ -2,14 +2,20 @@ import { useRef } from "react";
 import { cards } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useMediaQuery } from "react-responsive";
 
 const TestimonialSection = () => {
   const vdRef = useRef([]);
+  const isMobile = useMediaQuery({
+    query: "(max-width:768px)",
+  });
 
   useGSAP(() => {
-    gsap.set(".testimonials-section", {
-      marginTop: "-140vh",
-    });
+    if (!isMobile) {
+      gsap.set(".testimonials-section", {
+        marginTop: "-140vh",
+      });
+    }
 
     const tl = gsap.timeline({
       scrollTrigger: {

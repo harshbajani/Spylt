@@ -19,10 +19,11 @@ const FlavourSlider = () => {
           trigger: ".flavor-section",
           start: "2% top",
           end: `+=${scrollAmount + 1500}px`,
-          pin: true,
           scrub: true,
+          pin: true,
         },
       });
+
       tl.to(".flavor-section", {
         x: `-${scrollAmount + 1500}px`,
         ease: "power1.inOut",
@@ -71,13 +72,13 @@ const FlavourSlider = () => {
             <img
               src={`/images/${flavor.color}-bg.svg`}
               alt=""
-              className="absolute bottom-0 group-hover:scale-110 duration-500"
+              className="absolute bottom-0 group-hover:scale-110 duration-500 "
             />
 
             <img
               src={`/images/${flavor.color}-drink.webp`}
               alt=""
-              className="drinks group-hover:scale-105 duration-500"
+              className="drinks group-hover:scale-105 duration-500 group-hover:-mb-3.5"
             />
 
             <img
